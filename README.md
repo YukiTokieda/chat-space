@@ -25,6 +25,8 @@ Things you may want to cover:
 
 # DB設計
 
+##users/groupsテーブルのアソシエーションミス＆menbersテーブルのid カラムの型修正
+
 ## messagesテーブル
 
 |Column|Type|Options|
@@ -49,6 +51,7 @@ Things you may want to cover:
 ### Association
 - has_many :menbers
 - has_many :groups,through: :menbers
+- has_many :messages
 
 
 ## groupsテーブル
@@ -61,14 +64,15 @@ Things you may want to cover:
 ### Association
 - has_many :menbers
 - has_many :users,through: :menbers
+- has_many :messages
 
 
 ## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
