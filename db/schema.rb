@@ -14,23 +14,25 @@ ActiveRecord::Schema.define(version: 20190412061701) do
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "menbers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "uers_id"
-    t.integer  "groups_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "uers_id_id",   null: false
+    t.integer  "groups_id_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["groups_id_id"], name: "index_menbers_on_groups_id_id", using: :btree
+    t.index ["uers_id_id"], name: "index_menbers_on_uers_id_id", using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "body",       limit: 65535
+    t.text     "body",       limit: 65535, null: false
     t.string   "image"
-    t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "group_id",                 null: false
+    t.integer  "user_id",                  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
