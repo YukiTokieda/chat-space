@@ -2,6 +2,7 @@
 .main{
   float: right;
   width: calc(100vw - 300px);
+  overflow: scroll;
   .header{
     height: 100px;
     display: flex;
