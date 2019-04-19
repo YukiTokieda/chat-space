@@ -1,0 +1,21 @@
+.side
+ .header
+  %h3.header__name
+   ユーザーネーム
+  %ul.header__menus
+   %li.menu
+    = link_to root_path
+    = fa_icon 'edit', class: 'icon'
+   %li.menu
+    = link_to root_path
+    = fa_icon 'cog', class: 'icon'
+ .groups
+  .group
+   .groop__name  グループ名A
+   .group__message 最新のメッセージ
+  .group
+   .groop__name  グループ名B
+   .group__message 最新のメッセージ
+  .group
+   .groop__name  グループ名C
+   .group__message 最新のメッセージ
