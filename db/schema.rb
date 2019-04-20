@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20190419044406) do
   end
 
   create_table "menbers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "uers_id",    null: false
-    t.integer  "groups_id",  null: false
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["groups_id"], name: "index_menbers_on_groups_id", using: :btree
-    t.index ["uers_id"], name: "index_menbers_on_uers_id", using: :btree
+    t.index ["group_id"], name: "index_menbers_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_menbers_on_user_id", using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
