@@ -1,8 +1,7 @@
 
 .main{
   float: right;
-  width: calc(100vw - 300px);
-  overflow: scroll;
+  width: calc(100% - 300px);
   .header{
     height: 100px;
     display: flex;
