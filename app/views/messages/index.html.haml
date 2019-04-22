@@ -9,10 +9,10 @@
      = @group.name
     %ul.header__menbers
      Menber:
-     %li.menber A
+     - @group.users.each do |user|
+      =user.name
    %li.header__btn
-    = link_to edit_group_path(current_user) do
-     = fa_icon 'edit', class: 'btn'
+    = link_to 'EDIT',edit_group_path(current_user)
 
   .messages
    = render @messages
