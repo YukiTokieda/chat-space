@@ -18,7 +18,6 @@
     .list {
       display: inline-block;
      .icon{
-       color: $white;
        font-size: $side_header_font;
     }
    }
@@ -33,9 +32,11 @@
   .group{
       margin-bottom: 40px;
    &__name{
-       font-size: $side_group_name;
+      color: $white;
+      font-size: $side_group_name;
    }
    &__message{
+      color: $white;
       font-size: $side_group_message;
       margin-top: 5px;
    }
