@@ -4,18 +4,18 @@
    = current_user.name
   %ul.header__menus
    %li.menu
-    = link_to new_group_path do
-     = fa_icon 'edit', class: 'icon'
+    = link_to root_path
+    = fa_icon 'edit', class: 'icon'
    %li.menu
     = link_to edit_user_path(current_user) do
      = fa_icon 'cog', class: 'icon'
-
  .groups
-  -# .groups
-  - current_user.groups.each do |group|
-   .group
-    = link_to group_messages_path(group) do
-     .group__name
-      = group.name
-     .group__message
-      = group.show_last_message
+  .group
+   .groop__name  グループ名A
+   .group__message 最新のメッセージ
+  .group
+   .groop__name  グループ名B
+   .group__message 最新のメッセージ
+  .group
+   .groop__name  グループ名C
+   .group__message 最新のメッセージ

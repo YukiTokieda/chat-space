@@ -5,24 +5,32 @@
  .main
   .header
    .header__group
-    %h2.group__name
-     = @group.name
+    %h2.group__name グループA
     %ul.header__menbers
      Menber:
-     - @group.users.each do |user|
-      =user.name
-   %li.header__btn
-    = link_to 'EDIT',edit_group_path(current_user)
+     %li.menber A君
+     %li.menber Bちゃん
+   .header__btn EDIT
 
   .messages
-   = render @messages
-
+   .message
+    .message--info
+     %p.message--info__user A君
+     %p.message--info__date 2019-11-11
+    .message--contents
+     %p.message--contents__content おはよう
+   .message
+    .message--info
+     %p.message--info__user Bちゃん
+     %p.message--info__date 2019-11-12
+    .message--contents
+     %p.message--contents__content おはよう
 
   .form
-   = form_for [@group, @message] do |f|
-    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+   %form
+    %input.form__message
     .form__btn
-     = f.label :image, class: 'form__btn__image' do
+     %label.form__btn__image
       = fa_icon 'picture-o', class: 'icon'
-      = f.file_field :image, class: 'hidden'
-    = f.submit 'Send', class: 'form__submit'
+      %input.hidden{type: 'file'}
+    %input.form__submit{type: 'submit', value: 'Send'}
