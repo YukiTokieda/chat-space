@@ -2,6 +2,7 @@ $(function(){
 
   function buildHTML(message){
     var Image = message.image ? `<img src='${message.image}'> ` : '';
+    // イメージの分岐
     var html = `<div class="message">
             <div class="message--info">
 
@@ -44,7 +45,9 @@ $(function(){
     var html = buildHTML(data);
     $('.messages').append(html)
     $('#new_message')[0].reset();
+    // 入力欄のリセット
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
+    // 最新のメッセージにスクロール
   })
 
   .fail(function(){
