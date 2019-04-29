@@ -12,7 +12,7 @@
      - @group.users.each do |user|
       =user.name
    %li.header__btn
-    = link_to 'EDIT',edit_group_path(current_user)
+    = link_to 'EDIT',edit_group_path(@group)
 
   .messages
    = render @messages
