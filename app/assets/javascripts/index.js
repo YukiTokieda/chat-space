@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function() {
     })
 
     .fail(function() {
-    alert('ユーザー検索に失敗しました');
+      alert('ユーザー検索に失敗しました');
     })
   });
 
@@ -65,5 +65,6 @@ $(document).on('turbolinks:load', function() {
   $('#chat-group-users').on('click','.chat-group-user__btn--remove',function(){
     $(this).parent().remove();
   });
+
  });
 });
