@@ -61,9 +61,7 @@ $(document).on('turbolinks:load', function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message').last().data('id');
-    console.log(last_message_id)
     var gruop_id= location.pathname.split('/')[2];
-    console.log(gruop_id)
 
     $.ajax({
       //ルーティングで設定した通りのURLを指定
@@ -74,8 +72,6 @@ $(document).on('turbolinks:load', function(){
     })
 
     .done(function(messages) {
-      //追加するHTMLの入れ物を作る
-      var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       if (messages.length !== 0) {
         messages.forEach(function(message) {
