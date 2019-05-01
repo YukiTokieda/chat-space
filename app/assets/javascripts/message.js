@@ -60,8 +60,9 @@ $(document).on('turbolinks:load', function(){
 
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    last_message_id = $('.message').last().data('id');
     var gruop_id= location.pathname.split('/')[2];
+  if (location.pathname.match('\/groups\/'+ gruop_id +'\/messages')){
+    last_message_id = $('.message').last().data('id');
 
     $.ajax({
       //ルーティングで設定した通りのURLを指定
@@ -86,6 +87,7 @@ $(document).on('turbolinks:load', function(){
     .fail(function() {
     alert('自動更新に失敗しました');
     });
+  }
   };
   setInterval(reloadMessages, 5000);
   });
