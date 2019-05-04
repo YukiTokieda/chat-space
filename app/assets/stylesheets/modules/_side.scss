@@ -15,15 +15,13 @@
      font-weight: bold;
   }
   &__menus{
-    color:$white ;
     display: flex;
-    .list {
-      display: inline-block;
      .icon{
+       display: inline-block;
+       color:$white ;
        font-size: $side_header_font;
     }
    }
-  }
  }
 
  .groups{
@@ -31,14 +29,18 @@
     height:calc(100vh - 100px) ;
     padding: 20px 20px 0;
     overflow: scroll;
-    
+
   .group{
       margin-bottom: 40px;
+   .GROUPlink{
+      text-decoration: none;
+   }
    &__name{
       color: $white;
       font-size: $side_group_name;
    }
    &__message{
+      text-decoration: none;
       color: $white;
       font-size: $side_group_message;
       margin-top: 5px;
