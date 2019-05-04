@@ -12,7 +12,7 @@ set :default_env, {
 
 set :linked_files, %w{ config/secrets.yml }
 
-after 'deploy:publishing'
+after 'deploy:publishing','deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
